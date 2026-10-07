@@ -4,624 +4,303 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>for paarth ♡</title>
+  <title>hi paarth :)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
-
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
-      overflow: hidden;
-
       background: #FFF9ED;
       color: #29272A;
-
       font-family: "DM Sans", sans-serif;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      position: relative;
+      overflow-x: hidden;
     }
 
-    /* =========================
-       BACKGROUND
-    ========================= */
+    /* little background bits */
 
-    .blob {
+    .shape {
       position: fixed;
-      border-radius: 50%;
-      z-index: -2;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    .yellow-blob {
-      width: 300px;
-      height: 300px;
+    .yellow {
+      width: 170px;
+      height: 170px;
       background: #F3D56B;
-      top: -100px;
-      left: -80px;
-      opacity: 0.35;
+      border-radius: 48% 52% 45% 55%;
+      top: -55px;
+      left: -45px;
+      transform: rotate(-12deg);
+      opacity: 0.65;
     }
 
-    .blue-blob {
-      width: 250px;
-      height: 250px;
-      background: #9CC8E8;
-      bottom: -100px;
-      right: -60px;
-      opacity: 0.45;
-    }
-
-    .red-blob {
+    .blue {
       width: 130px;
       height: 130px;
+      background: #9CC8E8;
+      border-radius: 55% 45% 52% 48%;
+      bottom: -35px;
+      right: -25px;
+      transform: rotate(15deg);
+      opacity: 0.6;
+    }
+
+    .red {
+      width: 75px;
+      height: 75px;
       background: #C83B4B;
-      top: 15%;
+      border-radius: 50%;
+      top: 17%;
       right: 8%;
       opacity: 0.12;
     }
 
-    /* =========================
-       LITTLE DECORATIONS
-    ========================= */
+    /* random little things */
 
-    .doodle {
+    .scribble {
       position: fixed;
-      font-family: "Caveat", cursive;
-      font-size: 28px;
-      z-index: 1;
-      user-select: none;
-    }
-
-    .doodle.one {
-      top: 12%;
-      left: 12%;
-      transform: rotate(-12deg);
-      color: #C83B4B;
-    }
-
-    .doodle.two {
-      bottom: 14%;
-      left: 15%;
-      transform: rotate(8deg);
+      font-family: "Kalam", cursive;
+      z-index: 2;
       color: #5475B8;
+      pointer-events: none;
     }
 
-    .doodle.three {
-      top: 18%;
-      right: 18%;
-      transform: rotate(10deg);
-      color: #E0B83F;
+    .scribble.one {
+      top: 12%;
+      left: 8%;
+      font-size: 20px;
+      transform: rotate(-8deg);
     }
 
-    .doodle.four {
+    .scribble.two {
       bottom: 12%;
-      right: 12%;
-      transform: rotate(-10deg);
-      color: #C83B4B;
+      left: 10%;
+      font-size: 17px;
+      transform: rotate(6deg);
     }
 
-    /* =========================
-       MAIN CARD
-    ========================= */
+    .scribble.three {
+      top: 24%;
+      right: 8%;
+      font-size: 25px;
+      transform: rotate(10deg);
+    }
 
-    .card {
-      width: min(88%, 680px);
-      min-height: 530px;
+    /* main area */
 
-      background: rgba(255, 249, 237, 0.88);
-
-      border: 2px solid #29272A;
-
-      border-radius: 28px;
-
-      padding: 55px 45px;
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      width: min(760px, 90%);
+      margin: auto;
 
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
-      text-align: center;
+      padding: 70px 0;
+    }
 
+    .content {
+      width: 100%;
       position: relative;
-
-      box-shadow: 10px 10px 0 #9CC8E8;
-
-      animation: entrance 1s ease forwards;
     }
 
-    @keyframes entrance {
-      from {
-        opacity: 0;
-        transform: translateY(25px) rotate(-1deg);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) rotate(0);
-      }
-    }
-
-    /* =========================
-       TOP LABEL
-    ========================= */
-
-    .label {
-      display: inline-block;
-
-      background: #F3D56B;
-
-      border: 2px solid #29272A;
-
-      padding: 7px 15px;
-
-      font-size: 11px;
-      font-weight: 600;
-
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
+    .tiny-label {
+      font-family: "Kalam", cursive;
+      color: #5475B8;
+      font-size: 16px;
+      margin-bottom: 12px;
       transform: rotate(-2deg);
-
-      margin-bottom: 28px;
+      display: inline-block;
     }
-
-    /* =========================
-       TITLE
-    ========================= */
 
     h1 {
-      font-family: "Caveat", cursive;
-
-      font-size: clamp(70px, 13vw, 115px);
-
-      line-height: 0.75;
-
-      font-weight: 700;
-
+      margin: 0 0 32px 0;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -2px;
       color: #C83B4B;
-
-      margin-bottom: 25px;
-
-      transform: rotate(-2deg);
+      font-weight: 600;
     }
 
-    .subtitle {
-      max-width: 470px;
-
-      font-size: 15px;
+    .main-text {
+      max-width: 650px;
+      font-size: clamp(17px, 3vw, 20px);
       line-height: 1.7;
+      margin: 0;
+    }
 
+    .emphasis {
+      color: #C83B4B;
+      font-weight: 600;
+    }
+
+    .little-note {
+      margin-top: 38px;
+      max-width: 570px;
+      font-family: "Kalam", cursive;
+      font-size: 19px;
+      line-height: 1.5;
+      color: #5475B8;
+      transform: rotate(-1deg);
+    }
+
+    .continue {
+      display: inline-flex;
+      margin-top: 45px;
+
+      border: 2px solid #29272A;
+      background: #F3D56B;
       color: #29272A;
 
-      margin-bottom: 35px;
-    }
-
-    .subtitle span {
-      color: #5475B8;
-      font-weight: 600;
-    }
-
-    /* =========================
-       BUTTON
-    ========================= */
-
-    .start-button {
-      border: 2px solid #29272A;
-
-      background: #C83B4B;
-      color: white;
-
-      padding: 14px 27px;
-
-      border-radius: 50px;
+      padding: 12px 20px;
+      border-radius: 7px;
 
       font-family: "DM Sans", sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
 
-      cursor: pointer;
+      text-decoration: none;
 
       box-shadow: 4px 4px 0 #29272A;
 
-      transition: 0.2s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .start-button:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #29272A;
+    .continue:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #29272A;
     }
 
-    .start-button:active {
-      transform: translate(3px, 3px);
-      box-shadow: 1px 1px 0 #29272A;
+    .continue:active {
+      transform: translate(4px, 4px);
+      box-shadow: none;
     }
 
-    /* =========================
-       SECRET BUTTON
-    ========================= */
+    /* tiny suspicious thing */
 
-    .secret-button {
+    .secret-dot {
       position: absolute;
-
-      bottom: 18px;
-      right: 22px;
-
-      border: none;
-      background: transparent;
-
-      font-family: "DM Sans", sans-serif;
-      font-size: 10px;
-
-      color: rgba(41, 39, 42, 0.35);
-
+      right: 5%;
+      bottom: 4%;
+      width: 9px;
+      height: 9px;
+      background: #C83B4B;
+      border-radius: 50%;
       cursor: pointer;
-
-      transition: 0.2s;
+      opacity: 0.5;
     }
 
-    .secret-button:hover {
-      color: #C83B4B;
+    .secret-dot:hover {
+      opacity: 1;
+      transform: scale(1.4);
     }
 
-    /* =========================
-       STICKER
-    ========================= */
-
-    .sticker {
-      position: absolute;
-
-      background: #9CC8E8;
-
-      border: 2px solid #29272A;
-
-      padding: 9px 14px;
-
-      font-family: "Caveat", cursive;
-      font-size: 20px;
-      font-weight: 600;
-
-      transform: rotate(8deg);
-
-      bottom: 55px;
-      left: 30px;
-
-      box-shadow: 3px 3px 0 #29272A;
-    }
-
-    /* =========================
-       POPUP
-    ========================= */
-
-    .popup {
-      position: fixed;
-
-      inset: 0;
-
-      background: rgba(41, 39, 42, 0.35);
-
-      backdrop-filter: blur(5px);
-
+    .secret-message {
       display: none;
-
-      justify-content: center;
-      align-items: center;
-
-      z-index: 20;
-    }
-
-    .popup.show {
-      display: flex;
-    }
-
-    .popup-box {
-      width: min(85%, 420px);
-
-      background: #FFF9ED;
-
-      border: 2px solid #29272A;
-
-      border-radius: 22px;
-
-      padding: 38px;
-
-      text-align: center;
-
-      box-shadow: 8px 8px 0 #5475B8;
-
-      animation: popup 0.35s ease;
-    }
-
-    @keyframes popup {
-      from {
-        opacity: 0;
-        transform: scale(0.8) rotate(-3deg);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1) rotate(0);
-      }
-    }
-
-    .popup-box h2 {
-      font-family: "Caveat", cursive;
-
-      font-size: 45px;
-
+      position: absolute;
+      right: 0;
+      bottom: 8%;
+      font-family: "Kalam", cursive;
       color: #C83B4B;
-
-      margin-bottom: 15px;
+      font-size: 16px;
+      transform: rotate(-4deg);
     }
 
-    .popup-box p {
-      line-height: 1.7;
-
-      margin-bottom: 25px;
+    .secret-message.show {
+      display: block;
     }
-
-    .close-button {
-      border: 2px solid #29272A;
-
-      background: #F3D56B;
-
-      padding: 10px 20px;
-
-      border-radius: 30px;
-
-      cursor: pointer;
-
-      font-weight: 600;
-
-      box-shadow: 3px 3px 0 #29272A;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media (max-width: 600px) {
-
-      .card {
-        width: 88%;
-        min-height: 500px;
-
-        padding: 45px 25px;
-
-        box-shadow: 7px 7px 0 #9CC8E8;
+      .page {
+        padding: 55px 0;
       }
 
-      h1 {
-        font-size: 75px;
+      .scribble.one {
+        left: 3%;
       }
 
-      .subtitle {
-        font-size: 14px;
+      .scribble.three {
+        right: 3%;
       }
 
-      .sticker {
-        bottom: 40px;
-        left: 18px;
-        font-size: 17px;
+      .main-text {
+        line-height: 1.6;
       }
 
-      .doodle {
-        font-size: 22px;
+      .secret-message {
+        right: 5%;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-  <!-- BACKGROUND SHAPES -->
+  <div class="shape yellow"></div>
+  <div class="shape blue"></div>
+  <div class="shape red"></div>
 
-  <div class="blob yellow-blob"></div>
-  <div class="blob blue-blob"></div>
-  <div class="blob red-blob"></div>
+  <div class="scribble one">✦</div>
+  <div class="scribble two">okay anyway</div>
+  <div class="scribble three">↗</div>
 
+  <main class="page">
 
-  <!-- LITTLE DOODLES -->
+    <section class="content">
 
-  <div class="doodle one">✦</div>
-  <div class="doodle two">↗</div>
-  <div class="doodle three">✧</div>
-  <div class="doodle four">♡</div>
+      <div class="tiny-label">for one very specific person</div>
 
+      <h1>OMGGG HIII<br>MERIII JAANNNNN</h1>
 
-  <!-- MAIN CARD -->
+      <p class="main-text">
+        ik you said you didnt want a gift cs like u werent able to
+        reciprocate and allat wtv, but im making this bcs i
+        <span class="emphasis">KNOW</span> ki youd like it
+        <br>
+        <span>(and i love love love seeing you happy)</span>
+      </p>
 
-  <main class="card">
+      <p class="little-note">
+        accha btw, ye website is lwk crazy and has a lot of hidden
+        easter eggs, so like dhang se dekh
+      </p>
 
-    <div class="label">
-      classified birthday material
-    </div>
+      <a class="continue" href="birthday.html">
+        okay go →
+      </a>
 
+      <div
+        class="secret-dot"
+        onclick="findSecret()"
+        title="..."
+      ></div>
 
-    <h1>
-      HIIII MERI JAANNNN OMGGG
-    </h1>
+      <div class="secret-message" id="secretMessage">
+        you found something already. suspicious.
+      </div>
 
-
-    <p class="subtitle">
-
-      dekh i ws here for your 14th and im here for 15th, u aint getting rid of me like ever-
-
-      <br><br>
-
-      <span>and even thooo tune bohot bola ki 'you dont want a gift',</span>
-      ive still made u smt😭✌🏻
-
-    </p>
-
-
-    <button
-      class="start-button"
-      onclick="startGift()"
-    >
-      open your birthday gift →
-    </button>
-
-
-    <div class="sticker">
-      very important btw
-    </div>
-
-
-    <!-- EASTER EGG -->
-
-    <button
-      class="secret-button"
-      onclick="openSecret()"
-    >
-      don't click this
-    </button>
+    </section>
 
   </main>
 
-
-  <!-- SECRET POPUP -->
-
-  <div
-    class="popup"
-    id="secretPopup"
-  >
-
-    <div class="popup-box">
-
-      <h2>you found it.</h2>
-
-      <p>
-
-        okay, you're already snooping around.
-
-        <br><br>
-
-        that's probably going to be
-        important later. 👀
-
-      </p>
-
-      <button
-        class="close-button"
-        onclick="closeSecret()"
-      >
-        fine fine
-      </button>
-
-    </div>
-
-  </div>
-
-
   <script>
-
-    /* =========================
-       GO TO NEXT PAGE
-    ========================= */
-
-    function startGift() {
-
-      document.body.style.transition =
-        "opacity 0.6s ease";
-
-      document.body.style.opacity = "0";
-
-      setTimeout(function() {
-
-        window.location.href = "birthday.html";
-
-      }, 600);
-
-    }
-
-
-    /* =========================
-       SECRET POPUP
-    ========================= */
-
-    function openSecret() {
-
+    function findSecret() {
       document
-        .getElementById("secretPopup")
-        .classList.add("show");
-
+        .getElementById("secretMessage")
+        .classList.toggle("show");
     }
-
-
-    function closeSecret() {
-
-      document
-        .getElementById("secretPopup")
-        .classList.remove("show");
-
-    }
-
-
-    /* =========================
-       EASTER EGG
-       PRESS P FIVE TIMES
-    ========================= */
-
-    let pCount = 0;
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key.toLowerCase() === "p"
-        ) {
-
-          pCount++;
-
-          if (pCount === 5) {
-
-            alert(
-              "why are you pressing P five times 😭"
-            );
-
-            pCount = 0;
-
-          }
-
-        }
-
-      }
-    );
-
-
-    /* =========================
-       CLICK OUTSIDE POPUP
-    ========================= */
-
-    document
-      .getElementById("secretPopup")
-      .addEventListener(
-        "click",
-        function(event) {
-
-          if (
-            event.target === this
-          ) {
-
-            closeSecret();
-
-          }
-
-        }
-      );
-
   </script>
 
 </body>
