@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>for paarth ♡</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+
+      background: #FFF9ED;
+      color: #29272A;
+
+      font-family: "DM Sans", sans-serif;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      z-index: -2;
+    }
+
+    .yellow-blob {
+      width: 300px;
+      height: 300px;
+      background: #F3D56B;
+      top: -100px;
+      left: -80px;
+      opacity: 0.35;
+    }
+
+    .blue-blob {
+      width: 250px;
+      height: 250px;
+      background: #9CC8E8;
+      bottom: -100px;
+      right: -60px;
+      opacity: 0.45;
+    }
+
+    .red-blob {
+      width: 130px;
+      height: 130px;
+      background: #C83B4B;
+      top: 15%;
+      right: 8%;
+      opacity: 0.12;
+    }
+
+    /* =========================
+       LITTLE DECORATIONS
+    ========================= */
+
+    .doodle {
+      position: fixed;
+      font-family: "Caveat", cursive;
+      font-size: 28px;
+      z-index: 1;
+      user-select: none;
+    }
+
+    .doodle.one {
+      top: 12%;
+      left: 12%;
+      transform: rotate(-12deg);
+      color: #C83B4B;
+    }
+
+    .doodle.two {
+      bottom: 14%;
+      left: 15%;
+      transform: rotate(8deg);
+      color: #5475B8;
+    }
+
+    .doodle.three {
+      top: 18%;
+      right: 18%;
+      transform: rotate(10deg);
+      color: #E0B83F;
+    }
+
+    .doodle.four {
+      bottom: 12%;
+      right: 12%;
+      transform: rotate(-10deg);
+      color: #C83B4B;
+    }
+
+    /* =========================
+       MAIN CARD
+    ========================= */
+
+    .card {
+      width: min(88%, 680px);
+      min-height: 530px;
+
+      background: rgba(255, 249, 237, 0.88);
+
+      border: 2px solid #29272A;
+
+      border-radius: 28px;
+
+      padding: 55px 45px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      position: relative;
+
+      box-shadow: 10px 10px 0 #9CC8E8;
+
+      animation: entrance 1s ease forwards;
+    }
+
+    @keyframes entrance {
+      from {
+        opacity: 0;
+        transform: translateY(25px) rotate(-1deg);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+      }
+    }
+
+    /* =========================
+       TOP LABEL
+    ========================= */
+
+    .label {
+      display: inline-block;
+
+      background: #F3D56B;
+
+      border: 2px solid #29272A;
+
+      padding: 7px 15px;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      transform: rotate(-2deg);
+
+      margin-bottom: 28px;
+    }
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    h1 {
+      font-family: "Caveat", cursive;
+
+      font-size: clamp(70px, 13vw, 115px);
+
+      line-height: 0.75;
+
+      font-weight: 700;
+
+      color: #C83B4B;
+
+      margin-bottom: 25px;
+
+      transform: rotate(-2deg);
+    }
+
+    .subtitle {
+      max-width: 470px;
+
+      font-size: 15px;
+      line-height: 1.7;
+
+      color: #29272A;
+
+      margin-bottom: 35px;
+    }
+
+    .subtitle span {
+      color: #5475B8;
+      font-weight: 600;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .start-button {
+      border: 2px solid #29272A;
+
+      background: #C83B4B;
+      color: white;
+
+      padding: 14px 27px;
+
+      border-radius: 50px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      box-shadow: 4px 4px 0 #29272A;
+
+      transition: 0.2s ease;
+    }
+
+    .start-button:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #29272A;
+    }
+
+    .start-button:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 #29272A;
+    }
+
+    /* =========================
+       SECRET BUTTON
+    ========================= */
+
+    .secret-button {
+      position: absolute;
+
+      bottom: 18px;
+      right: 22px;
+
+      border: none;
+      background: transparent;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+
+      color: rgba(41, 39, 42, 0.35);
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .secret-button:hover {
+      color: #C83B4B;
+    }
+
+    /* =========================
+       STICKER
+    ========================= */
+
+    .sticker {
+      position: absolute;
+
+      background: #9CC8E8;
+
+      border: 2px solid #29272A;
+
+      padding: 9px 14px;
+
+      font-family: "Caveat", cursive;
+      font-size: 20px;
+      font-weight: 600;
+
+      transform: rotate(8deg);
+
+      bottom: 55px;
+      left: 30px;
+
+      box-shadow: 3px 3px 0 #29272A;
+    }
+
+    /* =========================
+       POPUP
+    ========================= */
+
+    .popup {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(41, 39, 42, 0.35);
+
+      backdrop-filter: blur(5px);
+
+      display: none;
+
+      justify-content: center;
+      align-items: center;
+
+      z-index: 20;
+    }
+
+    .popup.show {
+      display: flex;
+    }
+
+    .popup-box {
+      width: min(85%, 420px);
+
+      background: #FFF9ED;
+
+      border: 2px solid #29272A;
+
+      border-radius: 22px;
+
+      padding: 38px;
+
+      text-align: center;
+
+      box-shadow: 8px 8px 0 #5475B8;
+
+      animation: popup 0.35s ease;
+    }
+
+    @keyframes popup {
+      from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-3deg);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    .popup-box h2 {
+      font-family: "Caveat", cursive;
+
+      font-size: 45px;
+
+      color: #C83B4B;
+
+      margin-bottom: 15px;
+    }
+
+    .popup-box p {
+      line-height: 1.7;
+
+      margin-bottom: 25px;
+    }
+
+    .close-button {
+      border: 2px solid #29272A;
+
+      background: #F3D56B;
+
+      padding: 10px 20px;
+
+      border-radius: 30px;
+
+      cursor: pointer;
+
+      font-weight: 600;
+
+      box-shadow: 3px 3px 0 #29272A;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .card {
+        width: 88%;
+        min-height: 500px;
+
+        padding: 45px 25px;
+
+        box-shadow: 7px 7px 0 #9CC8E8;
+      }
+
+      h1 {
+        font-size: 75px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .sticker {
+        bottom: 40px;
+        left: 18px;
+        font-size: 17px;
+      }
+
+      .doodle {
+        font-size: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- BACKGROUND SHAPES -->
+
+  <div class="blob yellow-blob"></div>
+  <div class="blob blue-blob"></div>
+  <div class="blob red-blob"></div>
+
+
+  <!-- LITTLE DOODLES -->
+
+  <div class="doodle one">✦</div>
+  <div class="doodle two">↗</div>
+  <div class="doodle three">✧</div>
+  <div class="doodle four">♡</div>
+
+
+  <!-- MAIN CARD -->
+
+  <main class="card">
+
+    <div class="label">
+      classified birthday material
+    </div>
+
+
+    <h1>
+      hey,<br>
+      paarth.
+    </h1>
+
+
+    <p class="subtitle">
+
+      you've somehow managed to make it another year
+      without getting rid of me.
+
+      <br><br>
+
+      <span>unfortunately for you,</span>
+      I've made you something.
+
+    </p>
+
+
+    <button
+      class="start-button"
+      onclick="startGift()"
+    >
+      open your birthday gift →
+    </button>
+
+
+    <div class="sticker">
+      very important btw
+    </div>
+
+
+    <!-- EASTER EGG -->
+
+    <button
+      class="secret-button"
+      onclick="openSecret()"
+    >
+      don't click this
+    </button>
+
+  </main>
+
+
+  <!-- SECRET POPUP -->
+
+  <div
+    class="popup"
+    id="secretPopup"
+  >
+
+    <div class="popup-box">
+
+      <h2>you found it.</h2>
+
+      <p>
+
+        okay, you're already snooping around.
+
+        <br><br>
+
+        that's probably going to be
+        important later. 👀
+
+      </p>
+
+      <button
+        class="close-button"
+        onclick="closeSecret()"
+      >
+        fine fine
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =========================
+       GO TO NEXT PAGE
+    ========================= */
+
+    function startGift() {
+
+      document.body.style.transition =
+        "opacity 0.6s ease";
+
+      document.body.style.opacity = "0";
+
+      setTimeout(function() {
+
+        window.location.href = "birthday.html";
+
+      }, 600);
+
+    }
+
+
+    /* =========================
+       SECRET POPUP
+    ========================= */
+
+    function openSecret() {
+
+      document
+        .getElementById("secretPopup")
+        .classList.add("show");
+
+    }
+
+
+    function closeSecret() {
+
+      document
+        .getElementById("secretPopup")
+        .classList.remove("show");
+
+    }
+
+
+    /* =========================
+       EASTER EGG
+       PRESS P FIVE TIMES
+    ========================= */
+
+    let pCount = 0;
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key.toLowerCase() === "p"
+        ) {
+
+          pCount++;
+
+          if (pCount === 5) {
+
+            alert(
+              "why are you pressing P five times 😭"
+            );
+
+            pCount = 0;
+
+          }
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       CLICK OUTSIDE POPUP
+    ========================= */
+
+    document
+      .getElementById("secretPopup")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeSecret();
+
+          }
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
