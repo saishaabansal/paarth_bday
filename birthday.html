@@ -1,0 +1,1493 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --yellow: #FFF1B8;
+
+  --red: #C83B4B;
+
+  --ink: #382B2A;
+
+  --paper: #FFFCF5;
+
+  --blue: #A9D2EC;
+
+  --pink: #F7C6CC;
+
+  --peach-red: #F5B6A8;
+
+  --muted: #8C6D61;
+
+}
+
+* { box-sizing: border-box; }
+
+html {
+
+  scroll-behavior: smooth;
+
+  background: var(--yellow);
+
+}
+
+body {
+
+  margin: 0;
+
+  background: var(--yellow);
+
+  color: var(--ink);
+
+  font-family: "Nunito", sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+body.modal-open { overflow: hidden; }
+
+button { font: inherit; }
+
+/* INTRO */
+
+.intro {
+
+  min-height: 100svh;
+
+  padding: 45px 22px 35px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: var(--yellow);
+
+}
+
+.intro-inner {
+
+  width: 100%;
+
+  max-width: 650px;
+
+  animation: popIn .8s ease both;
+
+}
+
+.top-note {
+
+  display: inline-block;
+
+  background: var(--paper);
+
+  border: 2px solid var(--ink);
+
+  border-radius: 100px;
+
+  padding: 10px 17px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  transform: rotate(-2deg);
+
+  margin-bottom: 24px;
+
+}
+
+.intro h1 {
+
+  font-family: "Fredoka", sans-serif;
+
+  font-size: clamp(62px, 13vw, 105px);
+
+  font-weight: 600;
+
+  line-height: .98;
+
+  color: var(--red);
+
+  margin: 0 0 23px;
+
+  letter-spacing: -2px;
+
+}
+
+.intro p {
+
+  font-size: clamp(15px, 3.8vw, 18px);
+
+  font-weight: 800;
+
+  line-height: 1.8;
+
+  margin: 13px auto;
+
+  max-width: 500px;
+
+}
+
+.intro .birthday-line {
+
+  font-family: "Fredoka", sans-serif;
+
+  font-size: clamp(23px, 5.6vw, 35px);
+
+  line-height: 1.35;
+
+  font-weight: 600;
+
+  color: var(--red);
+
+  margin: 21px auto;
+
+}
+
+.intro .little-note {
+
+  font-weight: 700;
+
+  font-size: 15px;
+
+}
+
+.scroll-prompt {
+
+  margin-top: 35px;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  animation: blink 1.5s infinite;
+
+}
+
+.scroll-prompt span {
+
+  display: block;
+
+  font-size: 22px;
+
+  margin-top: 6px;
+
+}
+
+/* TIMELINE */
+
+.timeline-section {
+
+  background: var(--yellow);
+
+  min-height: 100svh;
+
+  padding: 50px 0 80px;
+
+  overflow: hidden;
+
+}
+
+.timeline-track {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0;
+
+  overflow-x: auto;
+
+  padding: 15px 20px 25px;
+
+  scroll-snap-type: x proximity;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--red) transparent;
+
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.timeline-track::-webkit-scrollbar { height: 4px; }
+
+.timeline-track::-webkit-scrollbar-thumb {
+
+  background: var(--red);
+
+  border-radius: 20px;
+
+}
+
+.timeline-item {
+
+  flex: 0 0 100px;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  padding: 0;
+
+  cursor: pointer;
+
+  scroll-snap-align: center;
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+.timeline-date {
+
+  min-height: 34px;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  font-family: "Fredoka", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  padding: 0 2px;
+
+  order: 1;
+
+}
+
+.timeline-dot {
+
+  width: 15px;
+
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  border: 3px solid var(--yellow);
+
+  box-shadow: 0 0 0 1.5px var(--red);
+
+  margin: 0;
+
+  transform: translateY(5.5px);
+
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  order: 2;
+
+}
+
+.timeline-line {
+
+  width: 100%;
+
+  height: 4px;
+
+  background: var(--red);
+
+  flex-shrink: 0;
+
+  order: 3;
+
+  margin-top: 0;
+
+}
+
+.timeline-item.active .timeline-dot {
+
+  background: var(--paper);
+
+  transform: translateY(5.5px) scale(1.3);
+
+}
+
+.timeline-item.active .timeline-date {
+
+  color: var(--red);
+
+}
+
+/* SECRET NOTE STAR MARKERS */
+
+/* Same width and position as regular timeline items */
+
+.timeline-item.note-item {
+
+  flex: 0 0 100px;
+
+}
+
+.note-item .timeline-date {
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+}
+
+/* A star inside the same circular marker used by the timeline */
+
+.star-dot {
+
+  width: 15px;
+
+  height: 15px;
+
+  min-width: 15px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: var(--paper);
+
+  background: var(--red);
+
+  border: 3px solid var(--yellow);
+
+  box-shadow: 0 0 0 1.5px var(--red);
+
+  font-size: 9px;
+
+  line-height: 1;
+
+  margin: 0;
+
+  padding: 0;
+
+  transform: translateY(5.5px);
+
+  order: 2;
+
+  z-index: 3;
+
+  position: relative;
+
+  flex-shrink: 0;
+
+  transition: transform .2s ease;
+
+}
+
+.note-item .timeline-line {
+
+  order: 3;
+
+}
+
+.note-item:hover .star-dot,
+
+.note-item:focus-visible .star-dot {
+
+  transform: translateY(5.5px) scale(1.3) rotate(12deg);
+
+}
+
+.note-item.active .star-dot {
+
+  transform: translateY(5.5px) scale(1.2) rotate(12deg);
+
+}
+
+.timeline-item:focus-visible {
+
+  outline: 2px dashed var(--red);
+
+  outline-offset: 5px;
+
+}
+
+/* NORMAL MEMORY CARD */
+
+.memory-area {
+
+  padding: 25px 20px 0;
+
+}
+
+.memory-card {
+
+  background: var(--paper);
+
+  border: 2px solid var(--ink);
+
+  border-radius: 25px;
+
+  padding: 25px 23px;
+
+  max-width: 530px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  box-shadow: 6px 6px 0 var(--red);
+
+  animation: cardIn .3s ease both;
+
+}
+
+.memory-date {
+
+  display: inline-block;
+
+  background: var(--blue);
+
+  border: 1.5px solid var(--ink);
+
+  border-radius: 100px;
+
+  padding: 7px 13px;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 17px;
+
+}
+
+.memory-text {
+
+  white-space: pre-line;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  line-height: 1.9;
+
+  margin: 0;
+
+  overflow-wrap: anywhere;
+
+}
+
+.memory-decoration {
+
+  text-align: right;
+
+  color: var(--red);
+
+  font-size: 22px;
+
+  margin-top: 15px;
+
+}
+
+.memory-navigation {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  max-width: 530px;
+
+  margin: 25px auto 0;
+
+}
+
+.nav-button {
+
+  border: 2px solid var(--ink);
+
+  border-radius: 100px;
+
+  padding: 10px 16px;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: "Fredoka", sans-serif;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+}
+
+.nav-button:disabled {
+
+  opacity: .35;
+
+  cursor: default;
+
+}
+
+/* PEACHY-RED SECRET NOTE POP-UP */
+
+.note-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 22px;
+
+  background: rgba(56, 43, 42, .38);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition: opacity .22s ease, visibility .22s ease;
+
+}
+
+.note-overlay.open {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+}
+
+.note-popup {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 390px;
+
+  padding: 38px 27px 30px;
+
+  border: 2px solid var(--ink);
+
+  border-radius: 28px;
+
+  background: var(--peach-red);
+
+  box-shadow: 7px 7px 0 var(--red);
+
+  transform: translateY(12px) scale(.96);
+
+  transition: transform .25s cubic-bezier(.2,.8,.2,1);
+
+}
+
+.note-overlay.open .note-popup {
+
+  transform: translateY(0) scale(1);
+
+}
+
+.note-popup-text {
+
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family: "Nunito", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 900;
+
+  line-height: 1.9;
+
+  white-space: pre-line;
+
+  overflow-wrap: anywhere;
+
+  text-align: center;
+
+}
+
+.note-popup-star {
+
+  text-align: center;
+
+  color: var(--red);
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  margin-bottom: 17px;
+
+}
+
+.note-close {
+
+  position: absolute;
+
+  top: 11px;
+
+  right: 13px;
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 1.5px solid var(--ink);
+
+  border-radius: 50%;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: "Fredoka", sans-serif;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: transform .2s ease;
+
+}
+
+.note-close:hover {
+
+  transform: rotate(90deg);
+
+}
+
+/* NEXT PAGE BUTTON */
+
+.next-page-wrap {
+
+  display: flex;
+
+  justify-content: center;
+
+  padding: 0 20px 55px;
+
+}
+
+.next-page-button {
+
+  max-width: 100%;
+
+  background: var(--red);
+
+  color: var(--paper);
+
+  border: 3px solid var(--ink);
+
+  border-radius: 999px;
+
+  padding: 15px 24px;
+
+  font-family: "Fredoka", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 0 var(--ink);
+
+  transition: transform .2s ease, box-shadow .2s ease;
+
+}
+
+.next-page-button:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 0 var(--ink);
+
+}
+
+.next-page-button:active {
+
+  transform: translateY(3px);
+
+  box-shadow: 0 2px 0 var(--ink);
+
+}
+
+.next-page-button:focus-visible {
+
+  outline: 3px dashed var(--red);
+
+  outline-offset: 6px;
+
+}
+
+/* ANIMATIONS */
+
+@keyframes blink {
+
+  0%, 100% { opacity: 1; }
+
+  50% { opacity: .4; }
+
+}
+
+@keyframes popIn {
+
+  from { opacity: 0; transform: translateY(15px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+@keyframes cardIn {
+
+  from { opacity: 0; transform: translateY(8px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+@media (min-width: 700px) {
+
+  .timeline-item { flex-basis: 120px; }
+
+  .timeline-item.note-item { flex-basis: 120px; }
+
+  .memory-card { padding: 32px; }
+
+}
+
+@media (max-width: 420px) {
+
+  .next-page-button {
+
+    font-size: 14px;
+
+    padding: 14px 18px;
+
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *, *::before, *::after {
+
+    scroll-behavior: auto !important;
+
+    animation: none !important;
+
+    transition: none !important;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="intro" id="top">
+
+  <div class="intro-inner">
+
+    <div class="top-note">this finna be our little corner of the internet btw &lt;3</div>
+
+    <h1>OMGG HIIIII</h1>
+
+    <p>im so glad u got the password right nhi to i woulda been so sad😔</p>
+
+    <p class="birthday-line">but yes HAPPY BIRTHDAY MERI JAANNN UR FINALLYYY 15</p>
+
+    <p class="little-note">this website has a lot going on so hopefully u find and read everything😭😭</p>
+
+    <p>but sabse pehle, lets js see how far weve come ♡</p>
+
+    <div class="scroll-prompt">scroll down<span>↓</span></div>
+
+  </div>
+
+</section>
+
+<section class="timeline-section" id="timeline">
+
+  <div class="timeline-track" id="timelineTrack"></div>
+
+  <div class="memory-area">
+
+    <article class="memory-card" id="memoryCard" aria-live="polite">
+
+      <div class="memory-date" id="memoryDate"></div>
+
+      <p class="memory-text" id="memoryText"></p>
+
+      <div class="memory-decoration">♡</div>
+
+    </article>
+
+    <div class="memory-navigation">
+
+      <button class="nav-button" id="prevButton" type="button">← previous</button>
+
+      <button class="nav-button" id="nextButton" type="button">next →</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- NEXT PAGE BUTTON -->
+
+<div class="next-page-wrap">
+
+  <button class="next-page-button" id="nextPageButton" type="button">
+
+    the supreme leader orders u to go to the next page →
+
+  </button>
+
+</div>
+
+<!-- SECRET NOTE POP-UP -->
+
+<div class="note-overlay" id="noteOverlay" aria-hidden="true">
+
+  <div
+
+    class="note-popup"
+
+    role="dialog"
+
+    aria-modal="true"
+
+    aria-labelledby="notePopupText"
+
+  >
+
+    <button
+
+      class="note-close"
+
+      id="noteClose"
+
+      type="button"
+
+      aria-label="Close note"
+
+    >×</button>
+
+    <div class="note-popup-star">✦</div>
+
+    <p class="note-popup-text" id="notePopupText"></p>
+
+  </div>
+
+</div>
+
+<script>
+
+const memories = [
+
+  {
+
+    date: "11 AUGUST · 9:48 PM",
+
+    shortDate: "11 AUG",
+
+    text: `the day i texted u to help u w that godforsaken map
+
+THANK GOD I TEXTED YOU THO CS USKE BAAD I LEGIT NEVER STOPPED`
+
+  },
+
+  {
+
+    date: "25 AUGUST",
+
+    shortDate: "25 AUG",
+
+    text: `somehow tujhe yaad hai ye, our first eye contact after u found out i like you😭😭`
+
+  },
+
+  {
+
+    date: "1 OCTOBER",
+
+    shortDate: "1 OCT",
+
+    text: `sad hai, but inclue kiya
+
+u rejected me😔`
+
+  },
+
+  {
+
+    date: "16 OCTOBER",
+
+    shortDate: "16 OCT",
+
+    text: `SAATTT KHOON MAAF, U ASKED ME OUT AND I SAID YES LEGIT BEST DAY EVEERRRRRR`
+
+  },
+
+  {
+
+    date: "16 NOVEMBER",
+
+    shortDate: "16 NOV",
+
+    text: `our first one month😭
+
+we were sooo awkwardd apan school mein baat hi nahi krre theee`
+
+  },
+
+  {
+
+    date: "20 NOVEMBER",
+
+    shortDate: "20 NOV",
+
+    text: `YOUR BDAY LAST YEAR OMG
+
+i would have done moree but lwk that was the first paragraph jo meine tere liye likha tha, i wasnt sure how much youd be okay w tabhii
+
+it ws still cute tho😭`
+
+  },
+
+  {
+
+    date: "8 DECEMBER",
+
+    shortDate: "8 DEC",
+
+    text: `THE FIRST TIMEEE WE SPOKEEE IRLLLL YAYAYAYAYAY`
+
+  },
+
+  {
+
+    date: "16 DECEMBER",
+
+    shortDate: "16 DEC",
+
+    text: `apna two months, this was soooo cutee thooo we wrote paragraphs and everythinggg`
+
+  },
+
+  {
+
+    date: "19 DECEMBER",
+
+    shortDate: "19 DEC",
+
+    text: `HANDS DOWN BEST DAY
+
+FIELD TRIP THA YE
+
+THE BUS RIDES? THE ENTIRE AMUSEMENT PARK?
+
+i remember the whole day omg every second of it
+
+especially the part where we were holding hands and i ws asleep on ur shoulder🤩
+
+also how ws my gift🤭👉🏻👈🏻`
+
+  },
+
+  {
+
+    note: true,
+
+    text: `ps theres a lot of bad memories too and im not including all of them, taaki vibe gir na jaye`
+
+  },
+
+  {
+
+    date: "16 JANUARY",
+
+    shortDate: "16 JAN",
+
+    text: `3 months the apne
+
+and you had the AUDACITY to be absent like wtf`
+
+  },
+
+  {
+
+    date: "14 FEB + 16 FEB",
+
+    shortDate: "14–16 FEB",
+
+    text: `WHILEEE I GAVE U THE FIRST EVER WEBSITE-
+
+ye 2-3 din were lwk concerning cs apna 4 month bhi, valentines bhi, and parents ko bhi pata chala😭😭😭`
+
+  },
+
+  {
+
+    date: "13 MARCH",
+
+    shortDate: "13 MAR",
+
+    text: `ion like including this, im very sorry`
+
+  },
+
+  {
+
+    date: "25 APRIL",
+
+    shortDate: "25 APR",
+
+    text: `WE’RE BACKKKK👅👅👅
+
+all bcs of me lwk`
+
+  },
+
+  {
+
+    date: "25 MAY",
+
+    shortDate: "25 MAY",
+
+    text: `OUR ONE MONTH 2.0, BUT BOTH OF US WERE OFFLINE😭😭
+
+its okay tho i coded the most gorgeous website for you (only to end up giving it to you literally months later)`
+
+  },
+
+  {
+
+    note: true,
+
+    text: `andddd thennnn we hit our lowest low`
+
+  },
+
+  {
+
+    date: "4 JUNE",
+
+    shortDate: "4 JUN",
+
+    text: `i had to break up, bcs of wtv the fuck was happening gharpe
+
+one of the most gut wrenching days fr`
+
+  },
+
+  {
+
+    date: "30 JUNE",
+
+    shortDate: "30 JUN",
+
+    text: `i texted you, again and that was bohot accha decision
+
+WE STARTED TALKING AGAINNN, although u had no clue bout the gift i never gave and the letter i wrote and never intended to send😭😭`
+
+  },
+
+  {
+
+    date: "3 AUGUST",
+
+    shortDate: "3 AUG",
+
+    text: `my 15th, and u wished me itna boring way mein omg🙄`
+
+  },
+
+  {
+
+    date: "9 AUGUST",
+
+    shortDate: "9 AUG",
+
+    text: `I FINALLY SENT YOU THE SECOND WEBSITE ID CODED YOU, ANDDD CONSIDERING HOW WE WERE TALKING TABB, UR REACTION DID NOT DISAPPOINT😭😭😭`
+
+  },
+
+  {
+
+    date: "26 SEPTEMBER",
+
+    shortDate: "26 SEP",
+
+    text: `anddd this ws the day i sent the unsent letter to you
+
+im lwk not bad at writing😭`
+
+  },
+
+  {
+
+    date: "16TH OCTOBER",
+
+    shortDate: "16 OCT",
+
+    text: `WOAHHHHHH
+
+WOAHHHHHHHHHHHH
+
+I WAS NOT EXPECTING TSSS AT ALLLLLLL`
+
+  }
+
+];
+
+const track = document.getElementById("timelineTrack");
+
+const memoryDate = document.getElementById("memoryDate");
+
+const memoryText = document.getElementById("memoryText");
+
+const memoryCard = document.getElementById("memoryCard");
+
+const prevButton = document.getElementById("prevButton");
+
+const nextButton = document.getElementById("nextButton");
+
+const noteOverlay = document.getElementById("noteOverlay");
+
+const notePopupText = document.getElementById("notePopupText");
+
+const noteClose = document.getElementById("noteClose");
+
+let currentIndex = 0;
+
+let lastFocusedElement = null;
+
+/* Build the timeline */
+
+memories.forEach((memory, index) => {
+
+  const button = document.createElement("button");
+
+  button.type = "button";
+
+  button.className = "timeline-item" + (memory.note ? " note-item" : "");
+
+  if (memory.note) {
+
+    button.setAttribute("aria-label", "Open secret note");
+
+    button.setAttribute("aria-haspopup", "dialog");
+
+    button.innerHTML = `
+
+      <span class="timeline-date" aria-hidden="true"></span>
+
+      <span class="star-dot" aria-hidden="true">✦</span>
+
+      <span class="timeline-line" aria-hidden="true"></span>
+
+    `;
+
+    button.addEventListener("click", () => {
+
+      openNote(memory.text, button);
+
+    });
+
+  } else {
+
+    button.innerHTML = `
+
+      <span class="timeline-date">${memory.shortDate}</span>
+
+      <span class="timeline-dot" aria-hidden="true"></span>
+
+      <span class="timeline-line" aria-hidden="true"></span>
+
+    `;
+
+    button.addEventListener("click", () => {
+
+      showMemory(index);
+
+      button.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "nearest",
+
+        inline: "center"
+
+      });
+
+    });
+
+  }
+
+  track.appendChild(button);
+
+});
+
+/* Show an ordinary dated memory */
+
+function showMemory(index) {
+
+  if (index < 0 || index >= memories.length) return;
+
+  const memory = memories[index];
+
+  if (memory.note) {
+
+    openNote(memory.text, track.children[index]);
+
+    return;
+
+  }
+
+  currentIndex = index;
+
+  memoryDate.textContent = memory.date;
+
+  memoryText.textContent = memory.text;
+
+  memoryCard.hidden = false;
+
+  document.querySelectorAll(".timeline-item").forEach((item, i) => {
+
+    item.classList.toggle("active", i === index);
+
+  });
+
+  prevButton.disabled = findDatedMemory(index, -1) === null;
+
+  nextButton.disabled = findDatedMemory(index, 1) === null;
+
+  memoryCard.style.animation = "none";
+
+  void memoryCard.offsetWidth;
+
+  memoryCard.style.animation = "cardIn .3s ease both";
+
+}
+
+/* Find the previous or next actual memory, skipping secret notes. */
+
+function findDatedMemory(fromIndex, direction) {
+
+  let i = fromIndex + direction;
+
+  while (i >= 0 && i < memories.length) {
+
+    if (!memories[i].note) return i;
+
+    i += direction;
+
+  }
+
+  return null;
+
+}
+
+/* Open the peachy-red secret-note pop-up */
+
+function openNote(text, trigger) {
+
+  lastFocusedElement = trigger;
+
+  notePopupText.textContent = text;
+
+  noteOverlay.classList.add("open");
+
+  noteOverlay.setAttribute("aria-hidden", "false");
+
+  document.body.classList.add("modal-open");
+
+  noteClose.focus();
+
+}
+
+/* Close the pop-up */
+
+function closeNote() {
+
+  if (!noteOverlay.classList.contains("open")) return;
+
+  noteOverlay.classList.remove("open");
+
+  noteOverlay.setAttribute("aria-hidden", "true");
+
+  document.body.classList.remove("modal-open");
+
+  if (lastFocusedElement) {
+
+    lastFocusedElement.focus();
+
+  }
+
+}
+
+noteClose.addEventListener("click", closeNote);
+
+/* Tapping the shaded area outside the note closes it. */
+
+noteOverlay.addEventListener("click", event => {
+
+  if (event.target === noteOverlay) {
+
+    closeNote();
+
+  }
+
+});
+
+/* Escape closes the note. */
+
+document.addEventListener("keydown", event => {
+
+  if (event.key === "Escape") {
+
+    closeNote();
+
+  }
+
+});
+
+/* Previous and next skip over secret notes. */
+
+prevButton.addEventListener("click", () => {
+
+  const previous = findDatedMemory(currentIndex, -1);
+
+  if (previous !== null) {
+
+    showMemory(previous);
+
+    track.children[previous].scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "nearest",
+
+      inline: "center"
+
+    });
+
+  }
+
+});
+
+nextButton.addEventListener("click", () => {
+
+  const next = findDatedMemory(currentIndex, 1);
+
+  if (next !== null) {
+
+    showMemory(next);
+
+    track.children[next].scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "nearest",
+
+      inline: "center"
+
+    });
+
+  }
+
+});
+
+/* Next page */
+
+document.getElementById("nextPageButton").addEventListener("click", () => {
+
+  window.location.href = "next.html";
+
+});
+
+/* Start on the first dated memory. */
+
+showMemory(0);
+
+</script>
+
+</body>
+
+</html>
