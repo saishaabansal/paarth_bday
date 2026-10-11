@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>15 wishes ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --yellow: #FFF1B8;
+
+  --red: #C83B4B;
+
+  --ink: #382B2A;
+
+  --paper: #FFFCF5;
+
+  --blue: #A9D2EC;
+
+  --pink: #F7C6CC;
+
+  --peach: #F5B6A8;
+
+  --muted: #8C6D61;
+
+  --cream: #FFF8E8;
+
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+  background: var(--yellow);
+
+  color: var(--ink);
+
+  font-family: 'Nunito', sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+button {
+
+  font: inherit;
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+button:focus-visible {
+
+  outline: 3px solid var(--ink);
+
+  outline-offset: 4px;
+
+}
+
+.hidden { display: none !important; }
+
+/* Background decorations */
+
+.background-star {
+
+  position: fixed;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  color: var(--red);
+
+  opacity: 0.25;
+
+  font-size: 23px;
+
+  animation: floatStar 4s ease-in-out infinite;
+
+}
+
+.star-one { top: 12%; left: 7%; }
+
+.star-two { top: 24%; right: 8%; animation-delay: 1s; }
+
+.star-three { bottom: 15%; left: 12%; animation-delay: 1.7s; }
+
+.star-four { bottom: 22%; right: 9%; animation-delay: .5s; }
+
+@keyframes floatStar {
+
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+
+  50% { transform: translateY(-9px) rotate(12deg); }
+
+}
+
+/* Intro letter */
+
+#letterStage {
+
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 35px 18px;
+
+}
+
+.letter-wrap {
+
+  width: min(100%, 500px);
+
+  text-align: center;
+
+  animation: riseIn .8s ease both;
+
+}
+
+.eyebrow {
+
+  color: var(--red);
+
+  text-transform: uppercase;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 17px;
+
+}
+
+.letter-card {
+
+  position: relative;
+
+  background: var(--paper);
+
+  border: 2px solid rgba(200,59,75,.18);
+
+  border-radius: 9px 9px 18px 18px;
+
+  padding: 34px 27px 30px;
+
+  box-shadow: 7px 8px 0 rgba(200,59,75,.12);
+
+  text-align: left;
+
+}
+
+.letter-card::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 12px;
+
+  left: 15px;
+
+  right: 15px;
+
+  border-top: 1px dashed rgba(200,59,75,.24);
+
+}
+
+.letter-heart {
+
+  text-align: center;
+
+  color: var(--red);
+
+  font-size: 25px;
+
+  margin: 4px 0 17px;
+
+}
+
+.letter-card h1 {
+
+  font-family: 'Caveat', cursive;
+
+  color: var(--red);
+
+  font-size: clamp(35px, 8vw, 48px);
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  text-align: center;
+
+  margin: 0 0 20px;
+
+}
+
+.letter-copy {
+
+  white-space: pre-line;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+}
+
+.letter-signoff {
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 27px;
+
+  color: var(--red);
+
+  text-align: right;
+
+  margin-top: 23px;
+
+}
+
+.primary-button {
+
+  display: inline-flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 27px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--red);
+
+  color: white;
+
+  padding: 14px 25px;
+
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 0 #9E2938;
+
+  transition: transform .2s, box-shadow .2s;
+
+}
+
+.primary-button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 0 #9E2938;
+
+}
+
+.primary-button:active {
+
+  transform: translateY(3px);
+
+  box-shadow: 0 2px 0 #9E2938;
+
+}
+
+/* Jar opening stage */
+
+#jarStage {
+
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px 18px;
+
+  text-align: center;
+
+}
+
+.jar-wrap {
+
+  width: min(100%, 430px);
+
+  animation: riseIn .7s ease both;
+
+}
+
+.jar-title {
+
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: clamp(29px, 7vw, 39px);
+
+  line-height: 1.15;
+
+  margin: 0 0 10px;
+
+}
+
+.jar-title span { color: var(--red); }
+
+.jar-button {
+
+  position: relative;
+
+  display: block;
+
+  width: 255px;
+
+  height: 310px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transform-origin: 50% 65%;
+
+}
+
+.jar-button:disabled { cursor: default; }
+
+.jar {
+
+  position: absolute;
+
+  bottom: 9px;
+
+  left: 22px;
+
+  width: 211px;
+
+  height: 238px;
+
+  border: 4px solid rgba(255,255,255,.83);
+
+  border-top: 0;
+
+  border-radius: 27px 27px 43px 43px;
+
+  background: rgba(255,255,255,.25);
+
+  box-shadow:
+
+    inset 9px 0 13px rgba(255,255,255,.48),
+
+    inset -8px 0 13px rgba(169,210,236,.2),
+
+    0 12px 20px rgba(140,109,97,.12);
+
+  overflow: hidden;
+
+}
+
+.jar::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+
+  left: 7px;
+
+  width: 9px;
+
+  height: 85%;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.48);
+
+  z-index: 3;
+
+}
+
+.jar::after {
+
+  content: '';
+
+  position: absolute;
+
+  right: 7px;
+
+  top: 17px;
+
+  width: 5px;
+
+  height: 70%;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.3);
+
+  z-index: 3;
+
+}
+
+.jar-neck {
+
+  position: absolute;
+
+  z-index: 2;
+
+  top: 45px;
+
+  left: 64px;
+
+  width: 127px;
+
+  height: 33px;
+
+  border: 4px solid rgba(255,255,255,.83);
+
+  border-radius: 8px 8px 3px 3px;
+
+  background: rgba(255,255,255,.2);
+
+}
+
+.jar-rim {
+
+  position: absolute;
+
+  z-index: 4;
+
+  top: 39px;
+
+  left: 59px;
+
+  width: 137px;
+
+  height: 13px;
+
+  border: 3px solid rgba(255,255,255,.9);
+
+  border-radius: 7px;
+
+  background: rgba(255,255,255,.45);
+
+}
+
+.jar-lid {
+
+  position: absolute;
+
+  z-index: 6;
+
+  top: 23px;
+
+  left: 66px;
+
+  width: 123px;
+
+  height: 24px;
+
+  border: 3px solid #A52D3C;
+
+  border-radius: 7px;
+
+  background: var(--red);
+
+  box-shadow: inset 0 4px 0 rgba(255,255,255,.17);
+
+  transition: transform .65s ease;
+
+  transform-origin: 20% 100%;
+
+}
+
+.jar-button.opening .jar-lid {
+
+  transform: translate(54px, -54px) rotate(35deg);
+
+}
+
+.chits-inside {
+
+  position: absolute;
+
+  inset: 56px 8px 7px;
+
+  overflow: hidden;
+
+  border-radius: 12px 12px 35px 35px;
+
+}
+
+.mini-chit {
+
+  position: absolute;
+
+  width: 60px;
+
+  height: 34px;
+
+  border: 1px solid rgba(56,43,42,.1);
+
+  border-radius: 4px;
+
+  box-shadow: 0 2px 2px rgba(56,43,42,.08);
+
+}
+
+.mini-chit::after {
+
+  content: '';
+
+  position: absolute;
+
+  left: 5px;
+
+  right: 5px;
+
+  top: 8px;
+
+  border-top: 1px dashed rgba(56,43,42,.12);
+
+}
+
+.mini-blue { background: var(--blue); }
+
+.mini-red { background: var(--red); }
+
+.mini-yellow { background: #FFE27A; }
+
+.jar-label {
+
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+
+  top: 145px;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  width: 150px;
+
+  padding: 10px 5px 8px;
+
+  background: var(--paper);
+
+  border: 1px solid rgba(200,59,75,.2);
+
+  border-radius: 5px;
+
+  box-shadow: 0 3px 5px rgba(56,43,42,.08);
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 24px;
+
+  color: var(--red);
+
+  line-height: 1.05;
+
+}
+
+.jar-label small {
+
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: var(--muted);
+
+}
+
+.jar-click-count {
+
+  margin-top: 16px;
+
+  color: var(--red);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+.jar-progress {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 13px;
+
+}
+
+.progress-dot {
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: rgba(200,59,75,.2);
+
+  transition: background .2s, transform .2s;
+
+}
+
+.progress-dot.active {
+
+  background: var(--red);
+
+  transform: scale(1.2);
+
+}
+
+.jar-button.wiggle { animation: jarWiggle .52s ease; }
+
+@keyframes jarWiggle {
+
+  0%, 100% { transform: rotate(0); }
+
+  15% { transform: rotate(-7deg) translateX(-3px); }
+
+  30% { transform: rotate(7deg) translateX(3px); }
+
+  45% { transform: rotate(-5deg) translateX(-2px); }
+
+  60% { transform: rotate(5deg) translateX(2px); }
+
+  75% { transform: rotate(-2deg); }
+
+}
+
+.jar-button.opening { animation: jarOpen .8s ease forwards; }
+
+@keyframes jarOpen {
+
+  0% { transform: scale(1); opacity: 1; }
+
+  35% { transform: scale(1.06); opacity: 1; }
+
+  100% { transform: scale(.85) translateY(-12px); opacity: 0; }
+
+}
+
+/* Wishes page */
+
+#wishesStage {
+
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100svh;
+
+  padding: 66px 20px 60px;
+
+  text-align: center;
+
+  animation: revealPage .9s ease both;
+
+}
+
+@keyframes revealPage {
+
+  from { opacity: 0; transform: translateY(15px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+.wishes-heading {
+
+  max-width: 650px;
+
+  margin: 0 auto 10px;
+
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: clamp(32px, 7vw, 49px);
+
+  line-height: 1.15;
+
+  color: var(--ink);
+
+}
+
+.wishes-heading .heart {
+
+  color: var(--red);
+
+  display: inline-block;
+
+  animation: heartBeat 1.8s ease-in-out infinite;
+
+}
+
+@keyframes heartBeat {
+
+  0%, 100% { transform: scale(1); }
+
+  10% { transform: scale(1.17); }
+
+  20% { transform: scale(1); }
+
+}
+
+.wishes-subtitle {
+
+  margin: 0 auto;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color: var(--muted);
+
+}
+
+.wishes-counter {
+
+  display: inline-block;
+
+  margin-top: 17px;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255,252,245,.65);
+
+  color: var(--red);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: .5px;
+
+}
+
+.chits-grid {
+
+  width: min(100%, 810px);
+
+  margin: 39px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+
+}
+
+.wish-chit {
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 119px;
+
+  padding: 10px 8px;
+
+  border: 1px solid rgba(56,43,42,.12);
+
+  border-radius: 4px 9px 5px 8px;
+
+  cursor: pointer;
+
+  box-shadow: 3px 5px 0 rgba(56,43,42,.07);
+
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  animation: chitArrive .6s ease both;
+
+}
+
+.wish-chit:nth-child(3n+1) { background: var(--blue); }
+
+.wish-chit:nth-child(3n+2) { background: #F4B2B8; }
+
+.wish-chit:nth-child(3n) { background: #FFE27A; }
+
+.wish-chit:nth-child(3n+1) { transform: rotate(-2deg); }
+
+.wish-chit:nth-child(3n+2) { transform: rotate(2deg); }
+
+.wish-chit:nth-child(4n) { transform: rotate(-3deg); }
+
+.wish-chit:hover {
+
+  transform: translateY(-6px) rotate(0deg) scale(1.025);
+
+  box-shadow: 4px 9px 0 rgba(56,43,42,.09);
+
+}
+
+.wish-chit.opened {
+
+  box-shadow: 0 0 0 2px rgba(200,59,75,.23);
+
+}
+
+.chit-number {
+
+  display: block;
+
+  font-family: 'Fredoka', sans-serif;
+
+  color: rgba(56,43,42,.65);
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+}
+
+.chit-blank {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 19%;
+
+  right: 19%;
+
+  border-top: 1px dashed rgba(56,43,42,.14);
+
+}
+
+.chit-heart {
+
+  position: absolute;
+
+  right: 8px;
+
+  bottom: 5px;
+
+  color: var(--red);
+
+  font-size: 14px;
+
+  opacity: 0;
+
+  transition: opacity .2s;
+
+}
+
+.wish-chit.opened .chit-heart { opacity: 1; }
+
+@keyframes chitArrive {
+
+  from { opacity: 0; transform: translateY(18px) rotate(0deg) scale(.92); }
+
+  to { opacity: 1; }
+
+}
+
+.wish-chit:nth-child(1) { animation-delay: .04s; }
+
+.wish-chit:nth-child(2) { animation-delay: .08s; }
+
+.wish-chit:nth-child(3) { animation-delay: .12s; }
+
+.wish-chit:nth-child(4) { animation-delay: .16s; }
+
+.wish-chit:nth-child(5) { animation-delay: .20s; }
+
+.wish-chit:nth-child(6) { animation-delay: .24s; }
+
+.wish-chit:nth-child(7) { animation-delay: .28s; }
+
+.wish-chit:nth-child(8) { animation-delay: .32s; }
+
+.wish-chit:nth-child(9) { animation-delay: .36s; }
+
+.wish-chit:nth-child(10) { animation-delay: .40s; }
+
+.wish-chit:nth-child(11) { animation-delay: .44s; }
+
+.wish-chit:nth-child(12) { animation-delay: .48s; }
+
+.wish-chit:nth-child(13) { animation-delay: .52s; }
+
+.wish-chit:nth-child(14) { animation-delay: .56s; }
+
+.wish-chit:nth-child(15) { animation-delay: .60s; }
+
+/* Back to letter button */
+
+.back-to-letter {
+
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 10px 17px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--red);
+
+  color: white;
+
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 0 #9E2938;
+
+  cursor: pointer;
+
+  transition: transform .2s, box-shadow .2s;
+
+}
+
+.back-to-letter:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 0 #9E2938;
+
+}
+
+/* Wish popup */
+
+#wishModal {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(56,43,42,.42);
+
+  backdrop-filter: blur(5px);
+
+  animation: fadeIn .2s ease both;
+
+}
+
+.wish-modal-card {
+
+  position: relative;
+
+  width: min(100%, 420px);
+
+  min-height: 270px;
+
+  padding: 35px 28px 29px;
+
+  border: 2px solid rgba(200,59,75,.14);
+
+  border-radius: 8px 8px 20px 20px;
+
+  background: var(--paper);
+
+  box-shadow: 8px 10px 0 rgba(56,43,42,.12);
+
+  animation: modalPop .3s cubic-bezier(.2,.8,.2,1.2) both;
+
+}
+
+.wish-modal-card.blue { background: #E3F1F8; }
+
+.wish-modal-card.red { background: #FCE1E2; }
+
+.wish-modal-card.yellow { background: #FFF3C8; }
+
+.modal-close {
+
+  position: absolute;
+
+  top: 10px;
+
+  right: 12px;
+
+  width: 34px;
+
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.55);
+
+  color: var(--ink);
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+}
+
+.modal-number {
+
+  color: var(--red);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+}
+
+.modal-heart {
+
+  margin: 17px 0 7px;
+
+  font-size: 25px;
+
+  color: var(--red);
+
+}
+
+.modal-message {
+
+  white-space: pre-line;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: clamp(24px, 6vw, 32px);
+
+  line-height: 1.4;
+
+  color: var(--ink);
+
+  margin: 9px 0 24px;
+
+  overflow-wrap: anywhere;
+
+}
+
+.modal-next {
+
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 10px 18px;
+
+  background: var(--red);
+
+  color: white;
+
+  font-family: 'Fredoka', sans-serif;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+}
+
+.modal-next:disabled {
+
+  opacity: .5;
+
+  cursor: default;
+
+}
+
+@keyframes fadeIn {
+
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+
+}
+
+@keyframes modalPop {
+
+  from { transform: translateY(15px) scale(.94); opacity: 0; }
+
+  to { transform: translateY(0) scale(1); opacity: 1; }
+
+}
+
+@keyframes riseIn {
+
+  from { transform: translateY(15px); opacity: 0; }
+
+  to { transform: translateY(0); opacity: 1; }
+
+}
+
+/* Confetti */
+
+.confetti-piece {
+
+  position: fixed;
+
+  z-index: 30;
+
+  top: -20px;
+
+  width: 9px;
+
+  height: 13px;
+
+  pointer-events: none;
+
+  animation: confettiFall var(--duration, 2.6s) linear forwards;
+
+}
+
+@keyframes confettiFall {
+
+  to {
+
+    transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(var(--spin, 650deg));
+
+    opacity: .2;
+
+  }
+
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+
+  #wishesStage {
+
+    padding: 53px 15px 45px;
+
+  }
+
+  .chits-grid {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+  }
+
+  .wish-chit { min-height: 112px; }
+
+  .letter-card {
+
+    padding: 31px 21px 25px;
+
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .chits-grid { gap: 9px; }
+
+  .wish-chit {
+
+    min-height: 100px;
+
+    padding: 8px 5px;
+
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *, *::before, *::after {
+
+    animation-duration: .01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: .01ms !important;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background-star star-one">✦</div>
+
+<div class="background-star star-two">✧</div>
+
+<div class="background-star star-three">♡</div>
+
+<div class="background-star star-four">✦</div>
+
+<!-- LETTER -->
+
+<section id="letterStage">
+
+  <div class="letter-wrap">
+
+    <div class="eyebrow">♡</div>
+
+    <article class="letter-card">
+
+      <div class="letter-heart">♥</div>
+
+      <h1>before you go aage, heres the mandatory paragraph😭</h1>
+
+      <div class="letter-copy" id="letterCopy">happy 15thhh my sweet boyy💗
+
+ye likhna hai abhi bhi</div>
+
+      <div class="letter-signoff" id="letterSignoff">with love, saishu </div>
+
+    </article>
+
+    <button class="primary-button" id="toJarButton">
+
+      open your gift <span>♡</span>
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- JAR -->
+
+<section id="jarStage" class="hidden">
+
+  <div class="jar-wrap">
+
+    <h1 class="jar-title">a jar full of wishes <span>♡</span></h1>
+
+    <button class="jar-button" id="jarButton"
+
+      aria-label="Tap the jar to open your birthday wishes">
+
+      <div class="jar-lid"></div>
+
+      <div class="jar-neck"></div>
+
+      <div class="jar-rim"></div>
+
+      <div class="jar">
+
+        <div class="chits-inside" id="chitsInside"></div>
+
+      </div>
+
+      <div class="jar-label">
+
+        little wishes
+
+        <small>MADE FOR YOU</small>
+
+      </div>
+
+    </button>
+
+    <div class="jar-click-count" id="jarClickCount">TAP 5 TIMES ♡</div>
+
+    <div class="jar-progress" id="jarProgress" aria-hidden="true">
+
+      <span class="progress-dot"></span>
+
+      <span class="progress-dot"></span>
+
+      <span class="progress-dot"></span>
+
+      <span class="progress-dot"></span>
+
+      <span class="progress-dot"></span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WISHES -->
+
+<section id="wishesStage" class="hidden">
+
+  <h1 class="wishes-heading">
+
+    15 wishes cs ur turning 15<span class="heart">💗</span>
+
+  </h1>
+
+  <div class="wishes-counter" id="wishesCounter">0 / 15 opened</div>
+
+  <div class="chits-grid" id="chitsGrid"></div>
+
+  <button class="back-to-letter" id="backToLetter">
+
+    go back to the letter
+
+  </button>
+
+</section>
+
+<!-- WISH POPUP -->
+
+<div id="wishModal" class="hidden" role="dialog"
+
+  aria-modal="true" aria-labelledby="modalNumber">
+
+  <div class="wish-modal-card" id="wishModalCard">
+
+    <button class="modal-close" id="closeModal" aria-label="Close wish">×</button>
+
+    <div class="modal-number" id="modalNumber">WISH NO. 1</div>
+
+    <div class="modal-heart">♡</div>
+
+    <p class="modal-message" id="modalMessage"></p>
+
+    <button class="modal-next" id="modalNext">back to my wishes ♡</button>
+
+  </div>
+
+</div>
+
+<script>
+
+const letterMessage = {
+
+  body: `happy 15th birthday, baby!! 💗
+
+i made a little something for you, and i hope it makes you smile.
+
+this is your little reminder that you deserve so many lovely things, not just today but throughout this whole year.
+
+there's something waiting for you next, so go on and open it. ♡`,
+
+  signoff: `with love, always ♡`
+
+};
+
+/* YOUR FIFTEEN WISHES */
+
+const wishes = [
+
+  {
+
+    color: "blue",
+
+    text: "i wish that you never ever stop ragebaiting me (yes i did just admit ki i find you funny)"
+
+  },
+
+  {
+
+    color: "red",
+
+    text: "i wish you the ability to admit im a better xo player cs THATS TRUE OMDS"
+
+  },
+
+  {
+
+    color: "yellow",
+
+    text: "you officially have a lifetime supply of legit the best thing in the world (yes ur right its me😍)"
+
+  },
+
+  {
+
+    color: "blue",
+
+    text: "i wishhh that all of your dreams and aspirations come true, and you achieve whatever you wish for"
+
+  },
+
+  {
+
+    color: "red",
+
+    text: "i wish ki, even if the day ur having isnt the best, u always have something to look forward to which makes it better, even if bohot thoda"
+
+  },
+
+  {
+
+    color: "yellow",
+
+    text: "while you will obviously change as time goes on, i wish you never lose the parts of you that make you YOU"
+
+  },
+
+  {
+
+    color: "blue",
+
+    text: "i wish ki you could finally see yourself the way i see you, youd never doubt khudko if u see what i can, ur literally perfect to me"
+
+  },
+
+  {
+
+    color: "red",
+
+    text: "i wish ur surrounded by genuine people, ones who actually make you happy rather than vo performative bs ive had to deal w😭🙏🏻"
+
+  },
+
+  {
+
+    color: "yellow",
+
+    text: "mein bolri teko, this year, ur gon surprise urself. u finna find out ki ur esa wayy more capable than you give urself credit for"
+
+  },
+
+  {
+
+    color: "blue",
+
+    text: "i wish ur always always proud of urself, cs i know im proud asf to even call you MINE, and ima always support u in whateva u do"
+
+  },
+
+  {
+
+    color: "red",
+
+    text: "i wish we figure out our future and keep each other in it, i dont wanna lose you, i love you too much for that. ur stuck w me forever meri jaan"
+
+  },
+
+  {
+
+    color: "yellow",
+
+    text: "i wish ki yk js how amazing you are, and pls accept mere compliments ong. ur genuinely the best person i know, and i cant imagine anything without you🫶🏻"
+
+  },
+
+  {
+
+    color: "blue",
+
+    text: "i wish we get to experience everything we havent yet, and we make HUNDREDSS of memories (with hella lotta pictures btw)"
+
+  },
+
+  {
+
+    color: "red",
+
+    text: "i wish you get to go to man utd stadium-😭😭😭 tune meko bataya tha you wanted to go ekbaar, ionno if u still do but i think youd like it anyways"
+
+  },
+
+  {
+
+    color: "yellow",
+
+    text: "i wish for more time w you, not js over text or call or wtv, but irl. i wnna have stupid conversations that last hours, and have itne saaaree jokes only we could laugh about😭"
+
+  }
+
+];
+
+/* JAR CHITS */
+
+const colors = ["blue", "red", "yellow"];
+
+const chitsInside = document.getElementById("chitsInside");
+
+const jarChitPositions = [
+
+  [4, 4, -12], [34, 0, 8], [65, 5, -5],
+
+  [16, 15, 8], [48, 13, -11], [3, 27, 6],
+
+  [34, 26, -4], [65, 28, 10], [15, 39, -9],
+
+  [46, 40, 7], [1, 51, -8], [33, 53, 12],
+
+  [64, 54, -5], [15, 65, 4], [45, 66, -12]
+
+];
+
+jarChitPositions.forEach((position, index) => {
+
+  const chit = document.createElement("div");
+
+  chit.className = "mini-chit mini-" + colors[index % 3];
+
+  chit.style.left = position[0] + "%";
+
+  chit.style.top = position[1] + "%";
+
+  chit.style.transform = "rotate(" + position[2] + "deg)";
+
+  chit.style.zIndex = String(index + 1);
+
+  chitsInside.appendChild(chit);
+
+});
+
+/* STAGE SWITCHING */
+
+const letterStage = document.getElementById("letterStage");
+
+const jarStage = document.getElementById("jarStage");
+
+const wishesStage = document.getElementById("wishesStage");
+
+document.getElementById("letterCopy").textContent = letterMessage.body;
+
+document.getElementById("letterSignoff").textContent = letterMessage.signoff;
+
+document.getElementById("toJarButton").addEventListener("click", () => {
+
+  letterStage.classList.add("hidden");
+
+  jarStage.classList.remove("hidden");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+});
+
+/* RETURN TO LETTER */
+
+document.getElementById("backToLetter").addEventListener("click", () => {
+
+  wishesStage.classList.add("hidden");
+
+  wishModal.classList.add("hidden");
+
+  jarStage.classList.add("hidden");
+
+  letterStage.classList.remove("hidden");
+
+  jarClicks = 0;
+
+  jarOpened = false;
+
+  jarButton.disabled = false;
+
+  jarButton.classList.remove("opening", "open", "wiggle");
+
+  jarClickCount.textContent = "TAP 5 TIMES ♡";
+
+  progressDots.forEach(dot => dot.classList.remove("active"));
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+});
+
+/* JAR CLICK AND OPENING ANIMATION */
+
+const jarButton = document.getElementById("jarButton");
+
+const jarClickCount = document.getElementById("jarClickCount");
+
+const progressDots = document.querySelectorAll(".progress-dot");
+
+let jarClicks = 0;
+
+let jarOpened = false;
+
+jarButton.addEventListener("click", () => {
+
+  if (jarOpened) return;
+
+  jarClicks++;
+
+  jarButton.classList.remove("wiggle");
+
+  void jarButton.offsetWidth;
+
+  jarButton.classList.add("wiggle");
+
+  progressDots.forEach((dot, index) => {
+
+    dot.classList.toggle("active", index < jarClicks);
+
+  });
+
+  if (jarClicks < 5) {
+
+    const remaining = 5 - jarClicks;
+
+    jarClickCount.textContent =
+
+      remaining === 1
+
+        ? "ONE MORE TAP ♡"
+
+        : "TAP " + remaining + " MORE TIMES ♡";
+
+    return;
+
+  }
+
+  jarOpened = true;
+
+  jarButton.disabled = true;
+
+  jarButton.classList.remove("wiggle");
+
+  jarButton.classList.add("opening", "open");
+
+  jarClickCount.textContent = "OPENING YOUR WISHES ♡";
+
+  setTimeout(() => {
+
+    jarStage.classList.add("hidden");
+
+    wishesStage.classList.remove("hidden");
+
+    renderWishChits();
+
+    launchConfetti(95);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+  }, 850);
+
+});
+
+/* RENDER WISH CHITS */
+
+const chitsGrid = document.getElementById("chitsGrid");
+
+const wishesCounter = document.getElementById("wishesCounter");
+
+const openedWishes = new Set();
+
+function renderWishChits() {
+
+  chitsGrid.innerHTML = "";
+
+  wishes.forEach((wish, index) => {
+
+    const chit = document.createElement("button");
+
+    chit.type = "button";
+
+    chit.className = "wish-chit";
+
+    chit.setAttribute("aria-label", "Open wish " + (index + 1));
+
+    const number = document.createElement("span");
+
+    number.className = "chit-number";
+
+    number.textContent = String(index + 1).padStart(2, "0");
+
+    const blankLine = document.createElement("span");
+
+    blankLine.className = "chit-blank";
+
+    blankLine.setAttribute("aria-hidden", "true");
+
+    const heart = document.createElement("span");
+
+    heart.className = "chit-heart";
+
+    heart.textContent = "♥";
+
+    heart.setAttribute("aria-hidden", "true");
+
+    chit.append(number, blankLine, heart);
+
+    chit.addEventListener("click", () => {
+
+      openWish(index);
+
+    });
+
+    chitsGrid.appendChild(chit);
+
+  });
+
+}
+
+/* OPEN A WISH */
+
+const wishModal = document.getElementById("wishModal");
+
+const wishModalCard = document.getElementById("wishModalCard");
+
+const modalNumber = document.getElementById("modalNumber");
+
+const modalMessage = document.getElementById("modalMessage");
+
+const modalNext = document.getElementById("modalNext");
+
+const closeModalButton = document.getElementById("closeModal");
+
+let previousFocus = null;
+
+function openWish(index) {
+
+  const wish = wishes[index];
+
+  openedWishes.add(index);
+
+  previousFocus = document.activeElement;
+
+  modalNumber.textContent = "WISH NO. " + (index + 1);
+
+  modalMessage.textContent = wish.text;
+
+  wishModalCard.classList.remove("blue", "red", "yellow");
+
+  wishModalCard.classList.add(wish.color);
+
+  wishesCounter.textContent = openedWishes.size + " / 15 opened";
+
+  const chitButtons = chitsGrid.querySelectorAll(".wish-chit");
+
+  chitButtons[index].classList.add("opened");
+
+  modalNext.textContent =
+
+    openedWishes.size === 15
+
+      ? "all wishes opened ♡"
+
+      : "back to my wishes ♡";
+
+  wishModal.classList.remove("hidden");
+
+  closeModalButton.focus();
+
+}
+
+function closeWish() {
+
+  wishModal.classList.add("hidden");
+
+  if (previousFocus && typeof previousFocus.focus === "function") {
+
+    previousFocus.focus();
+
+  }
+
+}
+
+closeModalButton.addEventListener("click", closeWish);
+
+modalNext.addEventListener("click", closeWish);
+
+wishModal.addEventListener("click", event => {
+
+  if (event.target === wishModal) {
+
+    closeWish();
+
+  }
+
+});
+
+document.addEventListener("keydown", event => {
+
+  if (event.key === "Escape" && !wishModal.classList.contains("hidden")) {
+
+    closeWish();
+
+  }
+
+});
+
+/* CONFETTI */
+
+function launchConfetti(amount = 60) {
+
+  const confettiColors = [
+
+    "#C83B4B",
+
+    "#A9D2EC",
+
+    "#FFE27A",
+
+    "#F7C6CC",
+
+    "#FFFCF5"
+
+  ];
+
+  for (let i = 0; i < amount; i++) {
+
+    const piece = document.createElement("div");
+
+    piece.className = "confetti-piece";
+
+    piece.style.left = Math.random() * 100 + "vw";
+
+    piece.style.background =
+
+      confettiColors[Math.floor(Math.random() * confettiColors.length)];
+
+    piece.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+
+    piece.style.setProperty("--duration", (2 + Math.random() * 2) + "s");
+
+    piece.style.setProperty("--drift", ((Math.random() - 0.5) * 240) + "px");
+
+    piece.style.setProperty("--spin", (Math.random() * 1000 + 200) + "deg");
+
+    document.body.appendChild(piece);
+
+    piece.addEventListener("animationend", () => {
+
+      piece.remove();
+
+    });
+
+  }
+
+}
+
+</script>
+
+</body>
+
+</html>
