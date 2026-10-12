@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>loading...</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --yellow: #FFF1B8;
+
+  --red: #C83B4B;
+
+  --ink: #382B2A;
+
+  --paper: #FFFCF5;
+
+  --blue: #A9D2EC;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 24px 18px;
+
+  background: var(--yellow);
+
+  color: var(--ink);
+
+  font-family: 'Fredoka', sans-serif;
+
+}
+
+.loading-page {
+
+  width: 100%;
+
+  max-width: 390px;
+
+  text-align: center;
+
+  animation: appear .5s ease both;
+
+}
+
+h1 {
+
+  font-size: clamp(25px, 7vw, 34px);
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  margin: 0 0 22px;
+
+  color: var(--red);
+
+}
+
+.photo-frame {
+
+  width: 190px;
+
+  height: 190px;
+
+  max-width: 65vw;
+
+  max-height: 65vw;
+
+  margin: 0 auto 22px;
+
+  padding: 7px;
+
+  background: var(--paper);
+
+  border: 2px solid var(--ink);
+
+  border-radius: 13px;
+
+  box-shadow: 3px 3px 0 var(--ink);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow: hidden;
+
+}
+
+#slideshow {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 7px;
+
+  opacity: 1;
+
+  transition: opacity .3s ease;
+
+}
+
+#slideshow.fade {
+
+  opacity: 0;
+
+}
+
+.loading-label {
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  margin-bottom: 9px;
+
+}
+
+.progress-row {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+}
+
+.progress-track {
+
+  flex: 1;
+
+  height: 22px;
+
+  padding: 3px;
+
+  border: 2px solid var(--ink);
+
+  border-radius: 6px;
+
+  background: var(--paper);
+
+  overflow: hidden;
+
+}
+
+.progress-fill {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 3px;
+
+  background: var(--red);
+
+  transition: width .12s linear;
+
+}
+
+#percentage {
+
+  width: 46px;
+
+  text-align: right;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  font-variant-numeric: tabular-nums;
+
+}
+
+.credits {
+
+  margin-top: 13px;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: var(--red);
+
+}
+
+#complete {
+
+  display: none;
+
+  margin-top: 20px;
+
+  padding: 11px 17px;
+
+  background: var(--blue);
+
+  border: 2px solid var(--ink);
+
+  border-radius: 8px;
+
+  box-shadow: 3px 3px 0 var(--ink);
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  animation: appear .4s ease both;
+
+}
+
+#complete.show {
+
+  display: inline-block;
+
+}
+
+@keyframes appear {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@media (max-width: 350px) {
+
+  .photo-frame {
+
+    width: 165px;
+
+    height: 165px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="loading-page">
+
+  <h1>I HAD TO INCLUDE THESE IM SORRY😭😭😭</h1>
+
+  <div class="photo-frame">
+
+    <img id="slideshow" src="photo1.jpg" alt="photo slideshow">
+
+  </div>
+
+  <div class="loading-label" id="loading-label">
+
+    loading Paarth.exe...
+
+  </div>
+
+  <div class="progress-row">
+
+    <div class="progress-track">
+
+      <div class="progress-fill" id="progress-fill"></div>
+
+    </div>
+
+    <span id="percentage">0%</span>
+
+  </div>
+
+  <div class="credits">photo credits JD ko😭🙏🏻</div>
+
+  <div id="complete">LOADING COMPLETE</div>
+
+</main>
+
+<script>
+
+const photos = [
+
+  "photo1.jpg",
+
+  "photo2.jpg",
+
+  "photo3.jpg",
+
+  "photo4.jpg",
+
+  "photo5.jpg",
+
+  "photo6.jpg",
+
+  "photo7.jpg",
+
+  "photo8.jpg"
+
+];
+
+const PHOTO_DURATION = 2500;
+
+const REDIRECT_DELAY = 1500;
+
+const TOTAL_DURATION = photos.length * PHOTO_DURATION;
+
+const slideshow = document.getElementById("slideshow");
+
+const fill = document.getElementById("progress-fill");
+
+const percentage = document.getElementById("percentage");
+
+const label = document.getElementById("loading-label");
+
+const complete = document.getElementById("complete");
+
+let startTime;
+
+let photoIndex = 0;
+
+let photoTimer;
+
+let animationFrame;
+
+function showPhoto(index) {
+
+  slideshow.classList.add("fade");
+
+  setTimeout(() => {
+
+    slideshow.src = photos[index];
+
+    slideshow.onload = () => {
+
+      slideshow.classList.remove("fade");
+
+    };
+
+    // If an image fails to load, move on instead of getting stuck.
+
+    slideshow.onerror = () => {
+
+      slideshow.classList.remove("fade");
+
+      slideshow.alt = "photo not found: " + photos[index];
+
+    };
+
+  }, 300);
+
+}
+
+function rotatePhotos() {
+
+  photoIndex = (photoIndex + 1) % photos.length;
+
+  showPhoto(photoIndex);
+
+}
+
+function updateProgress(timestamp) {
+
+  if (!startTime) startTime = timestamp;
+
+  const elapsed = timestamp - startTime;
+
+  const progress = Math.min(elapsed / TOTAL_DURATION, 1);
+
+  const percent = Math.floor(progress * 100);
+
+  fill.style.width = percent + "%";
+
+  percentage.textContent = percent + "%";
+
+  if (progress < 1) {
+
+    animationFrame = requestAnimationFrame(updateProgress);
+
+  } else {
+
+    finishLoading();
+
+  }
+
+}
+
+function finishLoading() {
+
+  clearInterval(photoTimer);
+
+  fill.style.width = "100%";
+
+  percentage.textContent = "100%";
+
+  label.textContent = "somehow survived the slideshow";
+
+  complete.classList.add("show");
+
+  setTimeout(() => {
+
+    window.location.href = "final.html";
+
+  }, REDIRECT_DELAY);
+
+}
+
+// Preload the images so the slideshow transitions more smoothly.
+
+photos.forEach((src) => {
+
+  const image = new Image();
+
+  image.src = src;
+
+});
+
+photoTimer = setInterval(rotatePhotos, PHOTO_DURATION);
+
+animationFrame = requestAnimationFrame(updateProgress);
+
+</script>
+
+</body>
+
+</html>
